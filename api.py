@@ -31,7 +31,7 @@ SKIN_CONDITIONS = [
 
 # Define the ConvNeXt model with metadata
 class ConvNeXtWithMetadata(nn.Module):
-    def __init__(self, num_classes, metadata_features=5, convnext_variant='tiny'):
+    def __init__(self, num_classes, metadata_features=5, convnext_variant='base'):
         super(ConvNeXtWithMetadata, self).__init__()
         
         # Import dynamically here to avoid loading at module level
@@ -131,7 +131,7 @@ async def load_model():
     
     # Create model directory if it doesn't exist
     os.makedirs("models", exist_ok=True)
-    model_path = "model/best_convnext_tiny today.pth"
+    model_path = "model/most_convnext_base.pth"
     
     # Check if model exists
     if not os.path.exists(model_path):
@@ -149,7 +149,7 @@ async def load_model():
         model = ConvNeXtWithMetadata(
             num_classes=len(SKIN_CONDITIONS),
             metadata_features=5,
-            convnext_variant='tiny'
+            convnext_variant='base'
         ).to(device)
         
         # Check model file integrity before loading
