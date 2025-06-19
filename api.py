@@ -131,7 +131,7 @@ async def load_model():
     
     # Create model directory if it doesn't exist
     os.makedirs("models", exist_ok=True)
-    model_path = "model/final_convnext_tiny.pth"
+    model_path = "model/best_convnext_tiny today.pth"
     
     # Check if model exists
     if not os.path.exists(model_path):
