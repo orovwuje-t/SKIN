@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+torch
+numpy
+pillow
+python-multipart
+pydantic
+typing-extensions
+torchvision
